@@ -25,7 +25,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import de.asideas.surgeon.R;
+import de.asideas.overlay.controls.R;
 
 /**
  * Controller for Quick Controls pie menu

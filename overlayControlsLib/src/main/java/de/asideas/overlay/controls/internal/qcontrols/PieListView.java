@@ -22,16 +22,18 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import de.asideas.surgeon.R;
+import de.asideas.overlay.controls.R;
 
 /**
  * shows views in a menu style list
  */
-public class PieListView extends BasePieView {
+public class PieListView extends BasePieView
+{
 
     private Paint mBgPaint;
 
-    public PieListView(Context ctx) {
+    public PieListView(Context ctx)
+    {
         mBgPaint = new Paint();
         mBgPaint.setColor(ctx.getResources().getColor(R.color.qcMenuBackground));
     }
@@ -41,42 +43,51 @@ public class PieListView extends BasePieView {
      */
     @Override
     public void layout(int anchorX, int anchorY, boolean left, float angle,
-            int pHeight) {
+                       int pHeight)
+    {
         super.layout(anchorX, anchorY, left, angle, pHeight);
         buildViews();
         mWidth = mChildWidth;
         mHeight = mChildHeight * mAdapter.getCount();
-        mLeft = anchorX + (left ? 0 : - mChildWidth);
+        mLeft = anchorX + (left ? 0 : -mChildWidth);
         mTop = Math.max(anchorY - mHeight / 2, 0);
-        if (mTop + mHeight > pHeight) {
+        if (mTop + mHeight > pHeight)
+        {
             mTop = pHeight - mHeight;
         }
-        if (mViews != null) {
+        if (mViews != null)
+        {
             layoutChildrenLinear();
         }
     }
 
-    protected void layoutChildrenLinear() {
+    protected void layoutChildrenLinear()
+    {
         final int n = mViews.size();
         int top = mTop;
-        for (View view : mViews) {
+        for (View view : mViews)
+        {
             view.layout(mLeft, top, mLeft + mChildWidth, top + mChildHeight);
             top += mChildHeight;
         }
     }
 
     @Override
-    public void draw(Canvas canvas) {
+    public void draw(Canvas canvas)
+    {
         canvas.drawRect(mLeft, mTop, mLeft + mWidth, mTop + mHeight, mBgPaint);
-        if (mViews != null) {
-            for (View view : mViews) {
+        if (mViews != null)
+        {
+            for (View view : mViews)
+            {
                 drawView(view, canvas);
             }
         }
     }
 
     @Override
-    protected int findChildAt(int y) {
+    protected int findChildAt(int y)
+    {
         final int ix = (y - mTop) * mViews.size() / mHeight;
         return ix;
     }

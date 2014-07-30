@@ -21,7 +21,7 @@ package de.asideas.overlay.controls.internal.qcontrols;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import de.asideas.surgeon.R;
+import de.asideas.overlay.controls.R;
 
 /**
  * shows views in a stack

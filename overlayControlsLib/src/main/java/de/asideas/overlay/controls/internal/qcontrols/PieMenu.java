@@ -39,7 +39,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.List;
-import de.asideas.surgeon.R;
+import de.asideas.overlay.controls.R;
 
 public class PieMenu extends FrameLayout
 {
