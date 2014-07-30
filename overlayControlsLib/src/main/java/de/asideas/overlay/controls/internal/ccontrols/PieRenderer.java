@@ -38,8 +38,8 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import java.util.ArrayList;
 import java.util.List;
-import de.asideas.surgeon.R;
-import de.asideas.surgeon.internal.Utils;
+import de.asideas.overlay.controls.R;
+import de.asideas.overlay.controls.internal.Utils;
 
 public class PieRenderer extends OverlayRenderer
         implements FocusIndicator

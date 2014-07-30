@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="qc_radius_start">65dip</dimen>
+    <dimen name="qc_radius_increment">80dip</dimen>
+    <dimen name="qc_slop">10dip</dimen>
+    <dimen name="qc_touch_offset">15dip</dimen>
+    <dimen name="qc_tab_title_height">24dip</dimen>
+    <dimen name="qc_thumb_width">150dip</dimen>
+    <dimen name="qc_thumb_height">100dip</dimen>
+    <dimen name="qc_item_size">20dip</dimen>
+    <dimen name="pie_radius_start">70dp</dimen>
+    <dimen name="pie_radius_increment">60dp</dimen>
+    <dimen name="pie_touch_slop">12dp</dimen>
+    <dimen name="pie_touch_offset">40dp</dimen>
+    <dimen name="pie_view_size">48dp</dimen>
+    <dimen name="focus_radius_offset">8dp</dimen>
+    <dimen name="focus_inner_offset">24dp</dimen>
+    <dimen name="focus_outer_stroke">3dp</dimen>
+    <dimen name="focus_inner_stroke">2dp</dimen>
+</resources>
