@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<de.asideas.overlay.controls.internal.views.SurgeonFrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/surgeon"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>

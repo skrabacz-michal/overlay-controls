@@ -16,10 +16,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import de.asideas.overlay.controls.R;
 import de.asideas.overlay.controls.internal.Utils;
 import de.asideas.overlay.controls.internal.ccontrols.PieRenderer;
 import de.asideas.overlay.controls.internal.ccontrols.RenderOverlay;
+import de.asideas.overlay.controls.R;
 
 /**
  * Created by mskrabacz on 28/05/14.
