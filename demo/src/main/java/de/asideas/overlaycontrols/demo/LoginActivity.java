@@ -4,14 +4,18 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -69,6 +73,30 @@ public class LoginActivity extends PlusBaseActivity implements LoaderCallbacks<C
     private View mSignOutButtons;
 
     private View mLoginFormView;
+
+    private boolean mBound;
+
+    private ServiceConnection mConnection = new ServiceConnection()
+    {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service)
+        {
+            InspectorArcService.InspectorBinder mBinder = (InspectorArcService.InspectorBinder) service;
+            mBinder.setMainIcon(R.drawable.ic_launcher);
+
+//            mPieRenderer = mBinder.getRenderer();
+//
+//            createMenu();
+
+            mBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name)
+        {
+            mBound = false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -132,7 +160,8 @@ public class LoginActivity extends PlusBaseActivity implements LoaderCallbacks<C
         mEmailLoginFormView = findViewById(R.id.email_login_form);
         mSignOutButtons = findViewById(R.id.plus_sign_out_buttons);
 
-        startService(new Intent(this, InspectorArcService.class));
+        Intent intent = new Intent(this, InspectorArcService.class);
+        bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }
 
     private void populateAutoComplete()

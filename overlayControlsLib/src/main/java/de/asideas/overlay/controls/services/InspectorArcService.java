@@ -16,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import de.asideas.overlay.controls.internal.Utils;
 import de.asideas.overlay.controls.internal.ccontrols.PieRenderer;
 import de.asideas.overlay.controls.internal.ccontrols.RenderOverlay;
@@ -88,6 +89,11 @@ public class InspectorArcService extends Service implements View.OnTouchListener
         public void hide()
         {
 
+        }
+
+        public void setMainIcon(int resId)
+        {
+            ((ImageView) mFrame.findViewById(R.id.control_hint)).setImageResource(resId);
         }
 
         public PieRenderer getRenderer()
