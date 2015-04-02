@@ -12,7 +12,7 @@ buildscript
     }
     dependencies
     {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:1.1.0'
         classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.10.+'
     }
 }
@@ -37,7 +37,8 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
