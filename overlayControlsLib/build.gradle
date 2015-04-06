@@ -3,6 +3,7 @@ def buildVersionCode = file('./version_code').getText().toInteger()
 
 apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.library'
+apply plugin: 'android-maven'
 
 buildscript
 {
